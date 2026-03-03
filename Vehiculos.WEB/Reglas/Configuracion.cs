@@ -22,7 +22,7 @@ namespace Reglas
         {
             var UrlBase = ObtenerUrlBase(seccion);
             var Metodo=_configuracion.GetSection(seccion).Get<APIEndPoint>().Metodos.Where(m=>m.Nombre==nombre).FirstOrDefault().Valor;
-            return $"{UrlBase}{Metodo}";
+            return $"{UrlBase}/{Metodo}";
         }
 
         private string ObtenerUrlBase(string seccion)
